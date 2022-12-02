@@ -5,6 +5,193 @@
 		<link rel="icon" type="image/svg+xml" href="/vite.svg" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>Library</title>
+		<link rel="stylesheet" href="style.css" />
+		<script src="main.js" defer></script>
 	</head>
-	<body></body>
+	<body>
+		<div id="container">
+			<header>
+				<div class="header-item">
+					<p class="sup-text">Welcome to</p>
+					<div id="logo-decorator">Odin Library</div>
+					<p id="sub-text">Gonn'a Read them all!!!</p>
+				</div>
+				<div class="header-item">
+					<button class="button" id="log-button">Log In</button>
+				</div>
+			</header>
+			<main>
+				<div class="main-item" id="menu-bar">
+					<div class="sup-text">Lets fill these shelves fast!!</div>
+
+					<select id="arrange-select">
+						<option disabled>Arrange on</option>
+						<option select value="1">Recent</option>
+						<option value="2">A-Z</option>
+						<option value="3">Z-A</option>
+						<option value="4">No of pages</option>
+					</select>
+				</div>
+				<div class="main-item" id="book-space">
+					<svg
+						xmlns="http://www.w3.org/2000/svg"
+						viewBox="0 0 24 24"
+						id="add-icon"
+					>
+						<path
+							d="M12,20C7.59,20 4,16.41 4,12C4,7.59 7.59,4 12,4C16.41,4 20,7.59 20,12C20,16.41 16.41,20 12,20M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2M13,7H11V11H7V13H11V17H13V13H17V11H13V7Z"
+						/>
+					</svg>
+					<!--<div class="card">
+						<div class="flex-card-item">
+							<div class="card-menu">
+								<div class="read-mark-box">
+									<div class="read-mark"></div>
+									Not Read
+								</div>
+
+								<svg
+									xmlns="http://www.w3.org/2000/svg"
+									viewBox="0 0 24 24"
+									class="close-icon"
+								>
+									<path
+										d="M19,6.41L17.59,5L12,10.59L6.41,5L5,6.41L10.59,12L5,17.59L6.41,19L12,13.41L17.59,19L19,17.59L13.41,12L19,6.41Z"
+									/>
+								</svg>
+							</div>
+							<div class="book-info">
+								<p class="card-sup-text">
+									Harry Potter and the chamber of secrets
+								</p>
+								<p class="card-sub-text">J.K rowling</p>
+								<p class="card-sub-text">535 pages</p>
+							</div>
+						</div>
+						<div class="card-button">
+							<div class="button" id="card-read-button">Read</div>
+						</div>
+					</div>-->
+				</div>
+
+				<dialog id="form-container" class="vanish">
+					<p class="sup-text">Add To Our Booklist</p>
+					<br />
+					<p class="sub-text">
+						Between pages of the book and the strokes of ink spread . . .
+					</p>
+					<form method="POST" id="form">
+						<label for="book-name" maxlength="112"
+							>Enter the title of the book</label
+						><input class="form-control" type="text" id="book-name" required />
+						<label for="author-name" maxlength="72"
+							>Enter the author of the book</label
+						><input
+							class="form-control"
+							type="text"
+							id="author-name"
+							required
+						/>
+						<label for="np-of-pages">Enter the no of pages of the book</label
+						><input
+							class="form-control"
+							type="number"
+							min="5"
+							max="200000"
+							id="no-of-pages"
+							required
+						/>
+						<label for="completed-or-not" class="checkbox-label"
+							>I have completed reading this book
+							<input type="checkbox" id="completed-or-not" value="1"
+						/></label>
+						<fieldset id="fieldset">
+							<legend>Enter the book genre</legend>
+							<label for="fiction" class="radio-label">
+								Fiction
+								<input
+									type="radio"
+									name="book-genre"
+									value="0"
+									id="fiction"
+									required
+							/></label>
+							<label for="romance" class="radio-label">
+								Romance
+								<input type="radio" name="book-genre" value="1" id="romance"
+							/></label>
+							<label for="horror" class="radio-label">
+								Horror
+								<input
+									type="radio"
+									name="book-genre"
+									value="2"
+									id="horror"
+									required
+							/></label>
+							<label for="mystery" class="radio-label">
+								Mystery
+								<input
+									type="radio"
+									name="book-genre"
+									value="3"
+									id="mystery"
+									required
+							/></label>
+							<label for="sci-fi" class="radio-label">
+								Sci-fi
+								<input
+									type="radio"
+									name="book-genre"
+									value="4"
+									id="sci-fi"
+									required
+							/></label>
+							<label
+								title="If the book you specified dosn't belong to any of the genre in the option click this button"
+								for="other"
+								class="radio-label"
+							>
+								Other
+
+								<input
+									type="radio"
+									name="book-genre"
+									value="5"
+									id="other"
+									required
+							/></label>
+						</fieldset>
+						<div id="button-container">
+							<button class="button" id="submit-button">Sumbit</button>
+							<button class="button" type="reset" id="reset-button">
+								Reset
+							</button>
+						</div>
+					</form>
+				</dialog>
+			</main>
+			<footer>
+				copyright@alvapranith2022
+				<a
+					id="github-link"
+					href=""
+					title="If you wanna visit Github click here!!!"
+				>
+					<svg
+						xmlns="http://www.w3.org/2000/svg"
+						viewBox="0 0 24 24"
+						id="github-icon"
+					>
+						<path
+							d="M12,2A10,10 0 0,0 2,12C2,16.42 4.87,20.17 8.84,21.5C9.34,21.58 9.5,21.27 9.5,21C9.5,20.77 9.5,20.14 9.5,19.31C6.73,19.91 6.14,17.97 6.14,17.97C5.68,16.81 5.03,16.5 5.03,16.5C4.12,15.88 5.1,15.9 5.1,15.9C6.1,15.97 6.63,16.93 6.63,16.93C7.5,18.45 8.97,18 9.54,17.76C9.63,17.11 9.89,16.67 10.17,16.42C7.95,16.17 5.62,15.31 5.62,11.5C5.62,10.39 6,9.5 6.65,8.79C6.55,8.54 6.2,7.5 6.75,6.15C6.75,6.15 7.59,5.88 9.5,7.17C10.29,6.95 11.15,6.84 12,6.84C12.85,6.84 13.71,6.95 14.5,7.17C16.41,5.88 17.25,6.15 17.25,6.15C17.8,7.5 17.45,8.54 17.35,8.79C18,9.5 18.38,10.39 18.38,11.5C18.38,15.32 16.04,16.16 13.81,16.41C14.17,16.72 14.5,17.33 14.5,18.26C14.5,19.6 14.5,20.68 14.5,21C14.5,21.27 14.66,21.59 15.17,21.5C19.14,20.16 22,16.42 22,12A10,10 0 0,0 12,2Z"
+						/>
+					</svg>
+				</a>
+			</footer>
+		</div>
+	</body>
 </html>
+
+<!--Problems facing-->
+<!--struggle for mobile ui-->
