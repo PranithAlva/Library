@@ -472,19 +472,16 @@ legend {
 	align-items: center;
 }
 
-/*
 .read-mark-box {
-	overflow: hidden;
 	padding: 1%;
 	color: var(--secondary-color);
-	width: max-content;
 	font-weight: bold;
 	background: rgba(255, 255, 255, 0.8);
 	outline: 2px solid none;
 	border-radius: 10px;
 	transition-duration: 1000ms;
 	transition-timing-function: ease-in;
-}*/
+}
 
 .read-mark {
 	height: 10px;
