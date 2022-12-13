@@ -439,6 +439,13 @@ legend {
 	gap: 10px;
 	height: 100px;
 }
+
+@media (max-width: 600px) {
+	#form-container {
+		width: 100%;
+		left: 35%;
+	}
+}
 /***************************************************form-end************************************************/
 
 /****************************************everything about card**********************************************/
@@ -465,7 +472,9 @@ legend {
 	align-items: center;
 }
 
+/*
 .read-mark-box {
+	overflow: hidden;
 	padding: 1%;
 	color: var(--secondary-color);
 	width: max-content;
@@ -475,7 +484,7 @@ legend {
 	border-radius: 10px;
 	transition-duration: 1000ms;
 	transition-timing-function: ease-in;
-}
+}*/
 
 .read-mark {
 	height: 10px;
@@ -485,11 +494,6 @@ legend {
 	transition-duration: 500ms;
 	transition-timing-function: ease-in;
 }
-
-/*
-.read-mark-box:has(.read-mark:hover)::after {
-	content: "";
-}*/
 
 .close-icon {
 	max-width: 30px;
@@ -529,6 +533,12 @@ legend {
 
 #card-read-button {
 	text-align: center;
+}
+
+@media (max-width: 600px) {
+	.card:hover {
+		transform: scale(1.03);
+	}
 }
 
 /******************************************everything about the card******************************************/

@@ -11,6 +11,12 @@ const colors = [
 	"linear-gradient(gray, black)",
 	"linear-gradient(#a8e2dc,  black)",
 	"linear-gradient(var(--primary-color), 70%, black)",
+	"FICTION",
+	"ROMANCE",
+	"HORROR",
+	"MYSTERY",
+	"SCI-FI",
+	"OTHERS",
 ];
 
 function AddBook(bookName, authorName, noOfPages, read, bookGenre) {
@@ -30,16 +36,11 @@ function AddBook(bookName, authorName, noOfPages, read, bookGenre) {
 AddBook.prototype.readStatus = function () {
 	if (this.read) {
 		this.readMark.style.background = "green";
-		let arr = this.readBox.childNodes;
-		arr[arr.length - 1].nodeValue = "  Read";
-		this.readBox.nodeValue = " Read";
 		this.readButton.style.background = "white";
 		this.readButton.style.color = "rgb(255, 0, 98)";
 		this.readButton.innerText = "Done";
 	} else {
 		this.readMark.style.background = "red";
-		let arr = this.readBox.childNodes;
-		arr[arr.length - 1].nodeValue = " Not Read";
 		this.readButton.style.background = "rgb(255, 0, 98)";
 		this.readButton.style.color = "white";
 		this.readButton.innerText = "Read";
@@ -186,6 +187,9 @@ function createCard(newBook, index) {
 	newBook.readMark = readMark;
 	newBook.card = card;
 	newBook.readStatus();
+	let arr = newBook.readBox.childNodes;
+	arr[arr.length - 1].nodeValue =
+		" " + colors[6 + Number(newBook.bookGenre)] + " ";
 
 	cardButtonContainer.appendChild(cardButton);
 
